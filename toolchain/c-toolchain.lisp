@@ -212,6 +212,10 @@
            #+ecl (parse-command-flags c::*cc-flags*)
            ;; FreeBSD non-base header files
            #+freebsd (list "-I" "/usr/local/include/")
+           ;; OpenBSD non-base header files
+           #+openbsd (list "-I" "/usr/local/include/")
+           ;; NetBSD non-base header files
+           #+netbsd (list "-I" "/usr/pkg/include/")
            (split-cflags (getenv "CFLAGS")))
           *ld* *cc*
           *ld-exe-flags* `(,@arch-flags #-(or sunos darwin) "-Wl,--export-dynamic")
